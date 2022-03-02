@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<div class="container mt-4">
+  <div class="row mb-4">
+    <div class="col">
+      <app-books-filtering (filterChanged)="filterChanged($event)"></app-books-filtering>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div *ngIf="books?.length > 0; else empty_state">
+        <app-books-list [books]="books"></app-books-list>
+      </div>
+
+      <ng-template #empty_state>
+        <div class="card">
+          <div class="card-body">Nada para mostrar.</div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>
+
+

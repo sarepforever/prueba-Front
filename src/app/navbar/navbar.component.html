@@ -1,0 +1,23 @@
+<nav class="navbar navbar-dark bg-primary justify-content-between px-4">
+  <a class="navbar-brand">BookStore</a>
+  <form class="form-inline">
+    <button
+      class="btn btn-success my-2 my-sm-0"
+      (click)="syncBooks()"
+      [disabled]="loading"
+    >
+      Sincronizar Autores y libros
+    </button>
+    <button
+      class="btn btn-light my-2 my-sm-0"
+      (click)="logout()"
+      [disabled]="loading"
+    >
+      Cerrar Sesión
+    </button>
+  </form>
+</nav>
+
+<modal #modal [modalConfig]="modalConfig">
+  <h6>Sincronización Exitosa</h6>
+</modal>

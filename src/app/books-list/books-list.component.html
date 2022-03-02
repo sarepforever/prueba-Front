@@ -1,0 +1,31 @@
+<button
+  class="btn btn-success btn-block btn-large mb-4"
+  (click)="exportAsXLSX()"
+>
+  Exportar a Excel
+</button>
+<table
+  datatable
+  [dtOptions]="dtOptions"
+  [dtTrigger]="dtTrigger"
+  class="table table-hover row-border hover"
+>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Autor</th>
+      <th>Title</th>
+      <th>N° paginas</th>
+      <th>Fecha de publicación</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books">
+      <td>{{ book.id }}</td>
+      <td>{{ book.author }}</td>
+      <td>{{ book.title }}</td>
+      <td>{{ book.pageCount }}</td>
+      <td>{{ book.publishDate | date:'mediumDate':'UTC' }}</td>
+    </tr>
+  </tbody>
+</table>
